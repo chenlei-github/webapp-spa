@@ -1,0 +1,39 @@
+.container
+ .row
+  .page-header
+   h3 #{title}
+.navbar.navbar-default.navbar-fixed-bottom
+ .container
+   .navbar-header
+    a.navbar-brand(href="/") 用户管理
+    a.navbar-brand(href="/shop") 商品管理
+//#registerModal.modal.fade
+ .modal-dialog
+  .modal-content
+   form(method="POST",action="/user/register")
+    .modal-header 注册
+    .modal-body
+     .form-group
+      label(for="name") 用户名
+      input#name.form-control(name="user[name]",type="text")
+     .form-group
+      label(for="passwd") 密码
+      input#passwd.form-control(name="user[passwd]",type="text")
+    .modal-footer
+     button.btn.btn-default(type="button",data-dismiss="modal") 取消
+     button.btn.btn-primary(type="submit") 提交
+#loginModal.modal.fade
+ .modal-dialog
+  .modal-content
+   form(method="POST",action="/user/login")
+    .modal-header 登入
+    .modal-body
+     .form-group
+      label(for="name") 用户名
+      input#name.form-control(name="user[name]",type="text")
+     .form-group
+      label(for="passwd") 密码
+      input#passwd.form-control(name="user[passwd]",type="text")
+    .modal-footer
+     button.btn.btn-default(type="button",data-dismiss="modal") 取消
+     button.btn.btn-primary(type="submit") 提交

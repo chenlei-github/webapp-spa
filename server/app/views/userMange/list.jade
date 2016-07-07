@@ -1,0 +1,31 @@
+extends ../common/layout
+
+block content
+ .container
+  .row
+   p
+    a.btn.btn-large.btn-primary(href="/userMange/add") 新增用户
+   table.table.table-hover.table-bordered
+    thead
+     tr
+      th Id
+      th 头像
+      th 名称
+      th 手机号
+      th 邮箱
+      th 生日
+      th 操作
+    tbody
+     each item in data.list
+      tr(class="item-id-#(item._id)")
+       td #{item._id}
+       td 
+        image(src="#{oss_url}#{item.header_pic_local}",style="max-width:50px;")
+       td #{item.name}
+       td #{item.phone}
+       td #{item.email}
+       td #{item.birth_day}
+       td
+        a(target="_blank", href="/userMange/edit/#{item._id}") 修改
+        span &nbsp;|&nbsp;&nbsp;
+        a(target="_blank", href="/userMange/del/#{item._id}") 删除

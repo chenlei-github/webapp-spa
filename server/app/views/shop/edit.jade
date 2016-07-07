@@ -1,0 +1,33 @@
+extends ../common/layout
+
+block content
+ .container
+   .row
+    p
+     a.pull-right.btn.btn-large.btn-primary(href="/shop") 返回商品列表
+     form.form-horizontal(method='POST', action='/shop/update')
+       input(type='hidden', name='_id', value='#{row._id}')
+       .form-group
+         label.col-sm-3.control-label(for='title') 商品图
+         .col-sm-5
+           img#myImage(alt='点击上传商品图', title="点击上传商品图" src="#{oss_url}#{row.img}",style="max-width:250px;")
+           input#uploadImage(name='imgData',size="50",type='file', accept='image/*', capture='camera', onchange='selectFileImage(this);')
+           input#new_pic(type="hidden",value="",name="row[img]")
+       .form-group
+         label.col-sm-3.control-label(for='doctor') 商品名称/描述
+         .col-sm-5
+           input#doctor.form-control(type='text', name='row[title]', value='#{row.title}')
+       .form-group
+         label.col-sm-3.control-label(for='country') 原价
+         .col-sm-5
+           input#country.form-control(type='text', name='row[price]', value='#{row.price}')
+       .form-group
+         label.col-sm-3.control-label(for='language') 现价
+         .col-sm-5
+           input#language.form-control(type='text', name='row[before_price]', value='#{row.before_price}')
+           br
+           input#desc.form-control(type="submit",name="submit" class="btn-success" value="提交")
+           br
+           br
+           
+

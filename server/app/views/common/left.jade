@@ -1,0 +1,52 @@
+.container-fluid
+  .row
+    .col-md-2
+      ul#main-nav.nav.nav-tabs.nav-stacked(style='')
+        li.active
+          a(href='#')
+            i.glyphicon.glyphicon-th-large
+            | 首页
+        li
+          a.nav-header.collapsed(href='#systemSetting', data-toggle='collapse')
+            i.glyphicon.glyphicon-cog
+            | 系统管理
+            span.pull-right.glyphicon.glyphicon-chevron-down
+          ul#systemSetting.nav.nav-list.collapse.secondmenu(style='height: 0px;')
+            li
+              a(href='#')
+                i.glyphicon.glyphicon-user
+                | 用户管理
+            li
+              a(href='#')
+                i.glyphicon.glyphicon-th-list
+                | 菜单管理
+            li
+              a(href='#')
+                i.glyphicon.glyphicon-asterisk
+                | 角色管理
+            li
+              a(href='#')
+                i.glyphicon.glyphicon-edit
+                | 修改密码
+            li
+              a(href='#')
+                i.glyphicon.glyphicon-eye-open
+                | 日志查看
+        li
+          a(href='./plans.html')
+            i.glyphicon.glyphicon-credit-card
+            | 物料管理
+        li
+          a(href='./grid.html')
+            i.glyphicon.glyphicon-globe
+            | 分发配置
+            span.label.label-warning.pull-right 5
+        li
+          a(href='./charts.html')
+            i.glyphicon.glyphicon-calendar
+            | 图表统计
+        li
+          a(href='#')
+            i.glyphicon.glyphicon-fire
+            | 关于系统
+    .col-md-10 主窗口

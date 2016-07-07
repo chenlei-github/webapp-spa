@@ -1,0 +1,20 @@
+extends ../common/layout
+
+block content
+ .container.kv-main
+   br
+   form(enctype='multipart/form-data')
+     .form-group
+       input#file-1.file(type='file', multiple='', data-overwrite-initial='false', data-min-file-count='2')
+script.
+  $("#file-1").fileinput({
+  uploadUrl: '#', // you must set a valid URL here else you will get an error
+  allowedFileExtensions : ['jpg', 'png','gif'],
+  overwriteInitial: false,
+  maxFileSize: 1000,
+  maxFilesNum: 10,
+  //allowedFileTypes: ['image', 'video', 'flash'],
+  slugCallback: function(filename) {
+  return filename.replace('(', '_').replace(']', '_');
+  }
+  });

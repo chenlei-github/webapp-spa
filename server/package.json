@@ -1,0 +1,43 @@
+{
+  "name": "WebAPP-SPA",
+  "version": "0.0.1",
+  "description": "WebAPP-SPA for nodejs,sui",
+  "main": "app.js",
+  "dependencies": {
+    "async": "~0.2.10",
+    "bcrypt": "~0.8.7",
+    "cheerio": "^0.20.0",
+    "connect-mongo": "~0.3.3",
+    "crypto": "0.0.3",
+    "eventproxy": "^0.3.4",
+    "express": "~3.4.8",
+    "grunt": "~0.4.5",
+    "grunt-concurrent": "~0.4.3",
+    "grunt-contrib-jshint": "~0.10.0",
+    "grunt-contrib-less": "~0.11.4",
+    "grunt-contrib-uglify": "~0.5.1",
+    "grunt-contrib-watch": "~0.6.1",
+    "grunt-mocha-test": "~0.11.0",
+    "grunt-nodemon": "~0.1.2",
+    "jade": "~1.3.0",
+    "latest": "~0.1.2",
+    "mime": "^1.3.4",
+    "moment": "~2.5.1",
+    "mongoose": "~3.8.14",
+    "superagent": "^2.0.0",
+    "underscore": "~1.6.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "grunt test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chenlei-github/webapp-spa.git"
+  },
+  "keywords": [
+    "webapp"
+  ],
+  "author": "chenlei",
+  "license": "MIT"
+}

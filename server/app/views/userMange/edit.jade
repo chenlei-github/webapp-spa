@@ -1,0 +1,61 @@
+extends ../common/layout
+
+block content
+ .container
+   .row
+    p
+     a.pull-right.btn.btn-large.btn-primary(href="/") 返回用户列表
+     form.form-horizontal(method='POST', action='/userMange/update')
+       input(type='hidden', name='_id', value='#{row._id}')
+       .form-group
+         label.col-sm-3.control-label(for='title') 头像
+         .col-sm-5
+           img#myImage(alt='点击上传头像', title="点击上传头像" src="#{oss_url}#{row.header_pic_local}",style="max-width:250px;")
+           input#uploadImage(name='imgData',size="50",type='file', accept='image/*', capture='camera', onchange='selectFileImage(this);')
+           input#new_pic(type="hidden",value="",name="user[new_header_pic]")
+       .form-group
+         label.col-sm-3.control-label(for='title') 用户名称
+         .col-sm-5
+           input#title.form-control(type='text', name='user[name]', value='#{row.name}')
+       .form-group
+         label.col-sm-3.control-label(for='title') 性别
+         .col-sm-5
+           select(name='user[sex]',class="form-control")
+             if row.sex==0
+              option(value='0',selected=true) 保密
+             else
+              option(value='0',) 保密
+             if row.sex==1
+              option(value='1',selected=true) 男
+             else
+              option(value='1',) 男
+             if row.sex==2
+              option(value='2',selected=true) 女
+             else
+              option(value='2',) 女
+       if !row._id
+        .form-group
+          label.col-sm-3.control-label(for='passwd') 初始密码
+          .col-sm-5
+            input#passwd.form-control(type='text', name='user[passwd]', value='123456')
+       .form-group
+         label.col-sm-3.control-label(for='doctor') 手机号
+         .col-sm-5
+          if row._id
+           input#doctor.form-control(type='text', name='user[phone]', readonly='true', value='#{row.phone}')
+          else
+           input#doctor.form-control(type='text', name='user[phone]', value='#{row.phone}')
+       .form-group
+         label.col-sm-3.control-label(for='country') 邮箱
+         .col-sm-5
+           input#country.form-control(type='text', name='user[email]', value='#{row.email}')
+       .form-group
+         label.col-sm-3.control-label(for='language') 生日
+         .col-sm-5
+           input#language.form-control(type='text', name='user[birth_day]', value='#{row.birth_day}')
+           br
+           input#desc.form-control(type="submit",name="submit" class="btn-success" value="提交")
+           br
+           br
+           
+

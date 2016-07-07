@@ -1,0 +1,30 @@
+extends ../common/layout
+
+block content
+ .container
+  .row
+   p
+    a.btn.btn-large.btn-primary(href="/shop/add") 新增商品
+   table.table.table-hover.table-bordered
+    thead
+     tr
+      th Id
+      th 商品名称
+      th 原价
+      th 现价
+      th 操作
+    tbody
+     each item in data
+      tr(class="item-id-#(item._id)")
+       td #{item._id}
+       td #{item.title}
+       td #{item.before_price}
+       td #{item.price}
+       td
+        a(target="_blank", href="/shop/edit/#{item._id}") 修改
+        span &nbsp;|&nbsp;&nbsp;
+        a(target="_blank", href="/shop/del/#{item._id}") 删除
+        span &nbsp;|&nbsp;&nbsp;
+        a(target="_blank", href="/shop/pic/#{item._id}/#{item.title}")
+         b
+          管理商品图
