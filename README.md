@@ -11,7 +11,7 @@
  2. npm v2.15.5
 
 
-###功能亮点
+###主要功能
 
 * 天气预报（中国气象局API）
     *  采用爬虫+接口相结合方式，支持所有地区天气查询
@@ -39,7 +39,6 @@
 * 其它：OSS阿里云存储、阿里大鱼短信
 
 
----
 
 ### 目录结构
 <pre>
@@ -81,22 +80,28 @@
 
 
 
----
 
 ### 安装步骤
 
+```bash
+# 下载项目
+  git clone https://github.com/chenlei-github/webapp-spa.git
 
-1.git clone https://github.com/chenlei-github/webapp-spa.git
+# 切换到服务端目录
+  cd webapp-spa/server/
 
-2.cd webapp-spa/server/
+# 获取项目依赖
+  npm install
 
-3.npm install
+# 启动服务
+  grunt
 
-4.grunt 
+```
 
-5. 
-前端首页：webapp-spa/client/index.html (直接用浏览器打开)
-后台管理：http://localhost:3000/
+#### 访问地址：
+ - 前端首页：webapp-spa/client/index.html (直接用浏览器打开)
+ - 后台管理：http://localhost:3000/
+
 
 
 
