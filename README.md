@@ -3,7 +3,7 @@
 ---
 
 ### 项目截图
-![print](http://bucket-mytest.oss-cn-beijing.aliyuncs.com/webApp-preview/print.png)
+![print](./client/public/images/assets-src/print.png)
 
 
 ### 运行环境
